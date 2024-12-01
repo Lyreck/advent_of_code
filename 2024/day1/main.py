@@ -43,9 +43,6 @@ def compute_similarity(l1,l2):
 
                 while l1[i] == l2[j] and j < n:
 
-                    if l1[j] == 7:
-                        print("wesh?")
-
                     j += 1 #parcours de la liste 2
                     nb_occ += 1
 

@@ -1,3 +1,10 @@
+# computer-specific
+.DS_Store
+.txt
+.csv
+.xlsx
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
