@@ -1,8 +1,8 @@
 # computer-specific
-.DS_Store
-.txt
-.csv
-.xlsx
+*.DS_Store
+*.txt
+*.csv
+*.xlsx
 
 
 # Byte-compiled / optimized / DLL files
