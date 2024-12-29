@@ -75,13 +75,6 @@ def part1(data):
 
 
 def part2(data):
-
-    # version gloutonne: a chaque 'X', check les lettres suivantes, les lettres en-dessous, les lettres au-dessus, les lettres a gauche, 
-    # les lettres en diagonale a droite, les lettres en diagonale a gauche.
-    # ce ki va etre le + embetant, c'est de gerer les bords. C'est fait grace a expand_matrix.
-
-    # pas compris dans la consigne: "it allows words to overlap other words"
-
     n,m = len(data), len(data[0]) #n by m matrix.
 
     count = 0 #nb of XMAS
@@ -104,7 +97,6 @@ if __name__ == "__main__":
     data, size = parse_input(filename)
 
     data = expand_matrix(data)
-
 
     count1 = part1(data)
     print(f'Result for part 1: count = {count1}')
