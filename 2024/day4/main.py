@@ -31,7 +31,7 @@ def part1(data):
 
     # version gloutonne: a chake 'X', check les lettres suivantes, les lettres en-dessous, les lettres au-dessus, les lettres a gauche, 
     # les lettres en diagonale a droite, les lettres en diagonale a gauche.
-    # ce ki va etre le + embetant, c'est de gerer les bords.
+    # ce ki va etre le + embetant, c'est de gerer les bords. C'est fait grace a expand_matrix.
 
     # pas compris dans la consigne: "it allows words to overlap other words"
 
@@ -74,6 +74,28 @@ def part1(data):
 
 
 
+def part2(data):
+
+    # version gloutonne: a chaque 'X', check les lettres suivantes, les lettres en-dessous, les lettres au-dessus, les lettres a gauche, 
+    # les lettres en diagonale a droite, les lettres en diagonale a gauche.
+    # ce ki va etre le + embetant, c'est de gerer les bords. C'est fait grace a expand_matrix.
+
+    # pas compris dans la consigne: "it allows words to overlap other words"
+
+    n,m = len(data), len(data[0]) #n by m matrix.
+
+    count = 0 #nb of XMAS
+
+    for i in range(4,n-4):
+        for j in range(4,m-4):
+
+            if (data[i][j] + data[i+1][j+1] + data[i+2][j+2], data[i][j+2] + data[i+1][j+1] + data[i+2][j]) in [('MAS', 'MAS'), ('SAM', 'SAM'), ('SAM', 'MAS'), ('MAS', 'SAM')]:
+                count+=1
+
+        
+    return count
+
+
 if __name__ == "__main__":
 
     filename = "input.txt"
@@ -84,5 +106,8 @@ if __name__ == "__main__":
     data = expand_matrix(data)
 
 
-    count = part1(data)
-    print(f'Result for part 1: count = {count}')
+    count1 = part1(data)
+    print(f'Result for part 1: count = {count1}')
+
+    count2 = part2(data)
+    print(f'Result for part 2: count = {count2}')
